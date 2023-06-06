@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+  <div class="container-fluid" style="margin-top: 100px;">
+    <div class="row">
+
+      <!-- List group buttons on left side inserted thru includes directory -->
+      <div class="col-2">
+        {% include 'includes/sidenav/sidenav.html' %}
+      </div>
+
+      <!-- Card container for user feedback -->
+      <div class="col-8">
+        <div class="row">
+            <div class="col-12 col-md-6 mx-auto">
+              <div class="card bg-dark" style="margin-top: 50px;">
+                <div class="card-body text-center text-light">
+                  <h5 class="card-title">Your Feedback</h5>
+                  <p class="card-text">
+                    We understand that you might have issues while using our product and we 
+                    at Cluster Music are willing to listen to our clients and the general public
+                    using our product. We are always ready to give you satisfaction.
+                  </p>
+                  <p class="card-text">
+                    Please click the link provided below to contact us by email to <em>developers@testmail.com </em>
+                    and describe 
+                    clearly if any issue you encouter while using this product. Our Technical staff
+                    and team of developers would be ready to help you and solve your issues as soon as 
+                    possible.
+                  </p>
+                  <p class="card-text">
+                    We are also open to receiving suggestions and constructive advice that can be helpful
+                    in making this product better for users.
+                  </p>
+                  <a href="mailto:developers@testmail.com" class="btn btn-primary">
+                   Contact Us
+                  </a>
+                </div>
+              </div>
+          </div> 
+     
+      </div>
+
+      <!-- Div space reserved for future use -->
+      <div class="col-2">
+      </div>
+
+    </div>
+  </div>
+    
+{% endblock %}

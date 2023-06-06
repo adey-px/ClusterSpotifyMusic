@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+ 
+<!-- This allauth account/base.html extends project base.html as shown in tags above. 
+Hence, it passes its inheritance to other allauth templates that extends it -->
+
+{% block content %}
+
+  <div class="container account-base">
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <div class="allauth-form-inner-content">
+
+          <!-- Forms & content from allauth templates that extend this account/base.html, go here -->
+          {% block inner_content %}
+          {% endblock %}
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

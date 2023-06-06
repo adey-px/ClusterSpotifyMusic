@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <div class="container-fluid" style="margin-top: 100px;">
+        <div class="row">
+            <div class="col-2">
+                {% include 'includes/sidenav/sidenav.html' %}
+            </div>
+            
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-md-4 text-light mx-auto">
+                        <h6>Welcome <strong>{{ username }}</strong>, 
+                            hope you are doing great.
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+
+{% endblock %}

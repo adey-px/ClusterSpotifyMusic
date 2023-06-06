@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+  <div class="container-fluid" style="margin-top: 100px;">
+    <div class="row">
+
+      <!-- List group buttons on left side inserted thru includes directory -->
+      <div class="col-2">
+        {% include 'includes/sidenav/sidenav.html' %}
+      </div>
+
+      <!-- Card -->
+      <div class="col-8">
+        <div class="row">
+            <div class="col-12 col-md-6 mx-auto">
+              <div class="card bg-dark" style="margin-top: 50px;">
+                <div class="card-body text-center text-light">
+                  <h5 class="card-title">Nothing Playing</h5>
+                  <p class="card-text">
+                    This is where you will see the song you are playing 
+                    and the upcoming songs. There is nothing to show here
+                    since you haven't played any song. Click the link below to
+                    select an audio to play. 
+                  </p>
+                  <a href="{% url 'home' %}" class="btn btn-primary">
+                    Play Audio
+                  </a>
+                </div>
+              </div>
+          </div> 
+     
+      </div>
+
+      <!-- Div space reserved for future use -->
+      <div class="col-2"></div>
+
+    </div>
+  </div>
+    
+{% endblock %}

@@ -1,0 +1,74 @@
+[
+  {
+    "model": "music.audio",
+    "pk": 23,
+    "fields": {
+      "title": "Happy_Birthday",
+      "artist": "Stevie Wonder",
+      "song": "Happy_Birthday_-_Stevie_Wonder.mp3",
+      "label": "Happy_Birthday_-_Stevie_W.png",
+      "duration": "4:28",
+      "published_by": 15
+    }
+  },
+  {
+    "model": "music.audio",
+    "pk": 24,
+    "fields": {
+      "title": "I_am_Alive",
+      "artist": "Celine Dion",
+      "song": "I_am_Alive_-_Celine_Dion_NSJt3KG.mp3",
+      "label": "I_am_Alive_-_Celine_D_9pToEna.JPG",
+      "duration": "4:28",
+      "published_by": 14
+    }
+  },
+  {
+    "model": "music.audio",
+    "pk": 25,
+    "fields": {
+      "title": "None Like You",
+      "artist": "P-Square",
+      "song": "None_like_you_-_P-square.mp3",
+      "label": "None_like_you_-_P.JPG",
+      "duration": "4:28",
+      "published_by": 15
+    }
+  },
+  {
+    "model": "music.audio",
+    "pk": 26,
+    "fields": {
+      "title": "My Love",
+      "artist": "2Face Idibia",
+      "song": "My-love-ft-VIP_-_2Face_Idibia.mp3",
+      "label": "My-love-ft-VIP_-_2Face.JPG",
+      "duration": "5:32",
+      "published_by": 14
+    }
+  },
+  {
+    "model": "music.audio",
+    "pk": 27,
+    "fields": {
+      "title": "Mighty God",
+      "artist": "Joe Praise",
+      "song": "Mighty_God_-_Joe_Praise.mp3",
+      "label": "Mighty_God_-_Joe_P.JPG",
+      "duration": "5:32",
+      "published_by": 15
+    }
+  },
+  {
+    "model": "music.audio",
+    "pk": 28,
+    "fields": {
+      "title": "Happy Birthday",
+      "artist": "Sunny Nneji",
+      "song": "Happy_Birthday_-_Sunny_Nneji.mp3",
+      "label": "Happy_Birthday_-_Sunny_N.PNG",
+      "duration": "5:59",
+      "published_by": 16
+    }
+  }
+]

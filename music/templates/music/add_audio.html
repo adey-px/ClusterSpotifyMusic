@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <div class="container-fluid" style="margin-top: 100px;">
+        <div class="row">
+
+            <!-- List group buttons on left side inserted thru includes directory -->
+            <div class="col-2">
+                {% include 'includes/sidenav/sidenav.html' %}
+            </div>
+
+            <div class="col-10">
+                <div class="row">
+                    <!-- Column reserved for future use-->
+                    <div class="col-12 col-md-3"></div>
+
+                    <!-- Form to upload audio into db -->
+                    <div class="col-12 col-md-6">
+                        <div class="card mb-3 mx-auto">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    Upload your audio. Fields marked * are compulsory.
+                                </h5>
+                                <form method="POST" action="{% url 'add_audio' %}" class="form mb-2"
+                                    enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    {% for field in form %}
+                                        {% if field.name != 'image' %}
+                                            {{ field | as_crispy_field }}
+                                        {% else %}
+                                            {{ field }}
+                                        {% endif %}
+                                    {% endfor %}
+                                    <div class="text-right">
+                                        <a class="btn btn-outline-black rounded-0" href="{% url 'home' %}">
+                                            Cancel
+                                        </a>
+                                        <button class="btn btn-black rounded-0" type="submit">
+                                            Add Audio
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                     <!-- Column reserved for future use -->
+                    <div class="col-12 col-md-3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

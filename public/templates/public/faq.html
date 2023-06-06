@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+  <div class="container-fluid" style="margin-top: 100px;">
+    <div class="row">
+
+      <!-- List group buttons on left side inserted thru includes directory -->
+      <div class="col-2">
+        {% include 'includes/sidenav/sidenav.html' %}
+      </div>
+
+      <!-- Accordion for FAQ -->
+      <div class="col-8">
+        <div class="row">
+          <div class="col-12 col-md-8 mx-auto">
+            <h4 class="card-title text-center text-light">
+              FAQ
+            </h4>
+            <div class="accordion" id="accordionExample">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Is this Application totally free?
+                    </button>
+                  </h2>
+                </div>
+            
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                   Yes, Cluster music application is completely free for any user to play audio and enjoy their favourite 
+                   music at any time. However, there is a Pro Subscription of once off payment of $5.99 monthly which allows
+                   user to download musicand use it offline for private or commercial purpose.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Do I need to have an account to play audio music?
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div class="card-body">
+                    No. User don't need to register or create account before they can play music. Audio music is made available free?for any interested
+                    person who like listening to music. 
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      What are the benefits of having account on Cluster music?
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                   Users who created account and can login successfully have additional benefits to upload their own audios
+                   and add content to the music platform. Registered users can also create Playlist by saving their favourite
+                   audios for future use. 
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      What is the difference between Cluster music and other popular music apps?
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                   The difference is that popular music apps like Spotify and Amazon music are owned, developed and managed by 
+                   established multinational companies, whereas Cluster music is developed by an individual. who is
+                   currently studying Fullstack Software Development at Code Institute in Dublin - Ireland. This music app was his 
+                   4th milestone project submitted in partial fulfillment of the course requirements and he hoped the project Assessment
+                   team would grant him credit/merit for this milestone project. 
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                     Who developed Cluster Music?
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                    The developer of this Cluster Music was a student is a
+                   currently studying Fullstack Software Development at Code Institute in Dublin - Ireland. This music app is his 
+                   4th milestone project submitted in partial fulfillment of the course requirements. He is proude to be associated 
+                   with the most famous Online Coding Bootcamp in whole of Europe and he is excited to be part of the Alumni of this 
+                   great citadel of learning. He has benefited immensely from the course content as well as the resourcefullness of their 
+                   tutors in Tutor support. The project is an evidence that the institute has shaped his career and future.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Div space reserved for future use -->
+      <div class="col-2">
+      </div>
+
+    </div>
+  </div>
+    
+{% endblock %}

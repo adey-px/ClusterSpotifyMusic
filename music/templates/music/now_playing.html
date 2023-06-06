@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+  <div class="container-fluid" style="margin-top: 100px;">
+    <div class="row">
+
+      <!-- List group buttons on left side inserted thru includes directory -->
+      <div class="col-2">
+        {% include 'includes/sidenav/sidenav.html' %}
+      </div>
+
+      <!-- Paginator to display audio song to play -->
+      <div class="col-10 col-md-7">
+
+        {% for audio in pagination %}
+
+          <!-- Always display audio_playing on top of paginator first -->
+          {% if audio == active_audio %}
+            <div style="padding-bottom: 20px;">
+              <h6 class="text-light text-center">
+                {{ audio.title }} - {{ audio.artist }}
+              </h6>
+            </div>
+            
+            <!-- Image label for audio songs -->
+            <div class="#" style="padding-bottom: 20px;">
+              {% if audio.label %}
+                <img src="{{ audio.label.url }}" class="mx-auto d-block img-fluid" alt="song_label" />
+              {% else %}
+                <img src="{{ MEDIA_URL }}noimage.jpg" class="mx-auto d-block img-fluid" alt="song_label">
+              {% endif %}
+            </div>
+
+            <!-- Audio songs fetched from db with play fucntionality in script.js file -->
+            <div class="mx-auto">
+              <audio class="player mx-auto" style="width: 80%;">
+                <source src="{% if audio.song %} {{audio.song.url}} {% else %} {{audio.link}} {% endif %}" type="audio/mp3" />
+              </audio>
+            </div>
+          
+            <!-- Get the rest of audio files not yet playing inside paginator -->
+          {% else %}
+            <div class="#" style="padding-bottom: 20px;">
+              <h6 class="text-light text-center">
+                {{ audio.title }} - {{ audio.artist }}
+              </h6>
+            </div>
+            
+            <!-- Image label for audio songs -->
+            <div class="#" style="padding-bottom: 20px;">
+              <img src="{{ audio.label.url }}" class="mx-auto d-block img-fluid" alt="song_label" />
+            </div>
+
+            <!-- Audio songs fetched from db with play functionality in script.js file -->
+            <div class="mx-auto">
+              <audio class="player mx-auto" style="width: 80%;">
+                <source src="{% if audio.song %} {{audio.song.url}} {% else %} {{audio.link}} {% endif %}" type="audio/mp3" />
+              </audio>
+            </div>
+          {% endif %}
+
+            <!-- Previous & next buttons of songs pages -->
+            <div class="text-center" style="padding-top: 30px;">
+              <a href="{% if pagination.has_previous %}?page={{ pagination.previous_page_number }}{% endif %}">
+                <i class="fa fa-step-backward fa-2x text-light"></i>
+              </a>
+
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+              <a href="{% if pagination.has_next %}?page={{ pagination.next_page_number }} {% endif %}">
+                <i class="fa fa-step-forward fa-2x text-light"></i>
+              </a>
+            </div>
+        {% endfor %}
+
+      </div>
+
+      <!-- Right sidebar to display media list for quick access while playing audios, hidden in mobile view -->
+      <div class="col-8 col-md-3">
+        <ul class="list-unstyled">
+
+          {% for audio in songs %}
+            <a href="{% url 'now_playing' audio.id %}" class="text-decoration-none d-none d-lg-inline">
+              <li class="media">
+
+                {% if audio.label %}
+                  <img src="{{ MEDIA_URL }}{{ audio.label }}" class="mr-3 audio-label" alt="song_label">
+                {% else %}
+                  <img src="{{ MEDIA_URL }}noimage.jpg" class="mr-3 audio-label" alt="song_label">
+                {% endif %}
+
+                <div class="media-body">
+                  <small class="mt-0 mb-1 text-light">
+                    {{ audio.title }} - {{ audio.artist }}
+                  </small> <br>
+                  <small>Mp3 format audio song</small>
+                </div>
+              </li>
+            </a>
+          {% endfor %}
+
+        </ul>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

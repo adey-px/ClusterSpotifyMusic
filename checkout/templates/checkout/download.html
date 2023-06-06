@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+  <div class="container-fluid" style="margin-top: 100px;">
+    <div class="row">
+
+      <!-- List group buttons on left side inserted thru includes directory -->
+      <div class="col-2">
+        {% include 'includes/sidenav/sidenav.html' %}
+      </div>
+
+      <!-- Grid cards to display audio songs -->
+      <div class="col-8">
+        <div class="card-deck">
+          <div class="row row-cols-1 row-cols-md-4">
+
+            {% for audio in audios %}
+              <div class="col mb-2">
+                <a href="{% url 'now_playing' audio.id %}" class="text-decoration-none">
+
+                  <div class="card h-100">
+                    <img src="{{ MEDIA_URL }}{{ audio.label }}" class="card-img-top" alt="song_label">
+
+                    <div class="card-body audio-card">
+                      <small class="card-title">{{ audio.title }}</small>
+                      
+                        <ul style="list-style-type: none;" class="inline-block float-right">
+                            <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" 
+                                role="button" aria-haspopup="true" aria-expanded="false">
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{% url 'share_audio' %}">
+                                    Share <i class="fas fa-share-square float-right"></i>
+                                </a>
+                                <div role="separator" class="dropdown-divider"></div>
+
+                                <a class="dropdown-item" href="{{ audio.song.url }}" download="{{ audio.title }}">
+                                  Downlaod <i class="far fa-arrow-alt-circle-down float-right"></i>
+                                </a>
+
+                            </div>
+                            </li>
+                        </ul>
+
+                      <br/>
+                      <small class="card-title text-dark">{{ file.artist }}</small>
+                    </div>
+                  </div>
+
+                </a>
+              </div>
+            {% endfor %}
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Div space reserved for future use -->
+      <div class="col-2">
+      </div>
+
+    </div>
+  </div>
+    
+{% endblock %}

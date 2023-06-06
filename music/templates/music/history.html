@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+  <div class="container-fluid" style="margin-top: 100px;">
+    <div class="row">
+
+      <!-- List group buttons on left side inserted thru includes directory -->
+      <div class="col-2">
+        {% include 'includes/sidenav/sidenav.html' %}
+      </div>
+
+      <!-- Card -->
+      <div class="col-8">
+        <div class="row">
+            <div class="col-12 col-md-6 mx-auto">
+              <div class="card bg-dark" style="margin-top: 50px;">
+                <div class="card-body text-center text-light">
+                  <h5 class="card-title">Under Contruction</h5>
+                  <p class="card-text">
+                    The developers at Cluster Music are currently working on this page 
+                    and we hope to make your play history available for you to see in
+                    future. 
+                  </p>
+                  <p class="card-text">
+                    Please check this page back soon for any update and latest information.
+                    We are sorry for any incovenience cause at this time. 
+                  </p>
+                  <a href="{% url 'home' %}" class="btn btn-primary">
+                    Keep Listening
+                  </a>
+                </div>
+              </div>
+          </div> 
+     
+      </div>
+
+      <!-- Div space reserved for future use -->
+      <div class="col-2"></div>
+
+    </div>
+  </div>
+    
+{% endblock %}
