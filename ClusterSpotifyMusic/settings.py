@@ -14,7 +14,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Get SECRET_KEY from env vars, use default if not found
 SECRET_KEY = env("SECRET_KEY", default="django-insecure-91fugbgp0sndw1")
 
-# Set DEBUG_VALUE from environment, default to false if not found
+# Set DEBUG_VALUE value
 DEBUG = True
 
 # Add localhost so local server command will also work
