@@ -12,7 +12,7 @@ env = environ.Env()
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Get SECRET_KEY from env vars, use default if not found
-SECRET_KEY = env("SECRET_KEY", default="django-insecure-91fugbgp0sndw1")
+SECRET_KEY = env("SECRET_KEY", default="dj-insecure-xyz")
 
 # Set DEBUG_VALUE value
 DEBUG = True
